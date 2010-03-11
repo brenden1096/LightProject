@@ -1,4 +1,4 @@
-# RUN SCRIPT AS ROOT!
+
 
 # Settings
  
