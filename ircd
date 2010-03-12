@@ -1,3 +1,4 @@
+#!/bin/bash
 
 
 # Settings
@@ -27,6 +28,18 @@
 
 # Do not edit anything below this line!
 
+echo -n "Please type the IRCd you would like us to get and compile for you (InspIRCd or UnrealIRCd): "
+read -e IRCd
+
+if [ $IRCd == InspIRCd ]
+then
 echo "irc.DarkFission.net #LightProjects"
 wget "http://www.inspircd.org/?p=download"
 tar xvjf InspIRCd-*.tar.bz2
+cd inspircd && ./configure --disable-interactive --enable-gnutls && make && make install
+echo "Now go to where inspircd is and cd into the "conf" directory"
+echo "Edit all the configuration files carefully"
+else
+echo "UnrealIRCd is currently not completed"
+fi
+
