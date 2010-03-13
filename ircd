@@ -31,7 +31,7 @@
 echo -n "Please type the IRCd you would like us to get and compile for you (InspIRCd or UnrealIRCd): "
 read -e IRCd
 
-if [ $IRCd == InspIRCd ]
+if [ $IRCd == inspircd ]
 then
 echo "irc.DarkFission.net #LightProjects"
 wget "http://www.inspircd.org/?p=download"
@@ -39,7 +39,14 @@ tar xvjf InspIRCd-*.tar.bz2
 cd inspircd && ./configure --disable-interactive --enable-gnutls && make && make install
 echo "Now go to where inspircd is and cd into the "conf" directory"
 echo "Edit all the configuration files carefully"
+elif [ $IRCd = unreal ]
+then
+echo "irc.DarkFission.net #LightProjects"
+wget "http://unrealircd.icedslash.com/Unreal3.2.8.1.tar.gz"
+tar xvf Unreal*.tar.gz
+cd Unreal3.2 && ./Config -quick && make && make install && cp docs/example.conf unrealircd.conf
+echo "Now go to where Unreal3.2 is and use your favorite text editor to edit unrealircd.conf"
 else
-echo "UnrealIRCd is currently not completed"
+echo "Invalid."
 fi
 
