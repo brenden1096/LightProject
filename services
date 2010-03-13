@@ -1,0 +1,29 @@
+#!/bin/bash
+
+
+# Settings
+ 
+# Any Debian Linux based distrobution
+# apt-get update
+# apt-get install build-essential
+# apt-get install pkg-config
+# apt-get install gettext
+
+# Gentoo Linux
+# emerge --sync
+# emerge gcc
+
+
+# Do not edit anything below this line!
+
+echo -n "Please type the IRCd you would like us to get and compile for you (atheme or anope): "
+read -e services
+
+if [ $services == atheme ] 
+then
+echo "irc.DarkFission.net #LightProjects"
+wget "http://atheme.net/downloads/atheme-services-5.0.1.tar.bz2"
+tar xvjf atheme-services-*.tar.bz2
+cd atheme-services-* && ./configure --silent && make && make install && cd ../atheme/etc && cp atheme.conf.example atheme.conf
+echo "Done, please make sure you edit atheme.conf in ~/atheme/etc"
+fi
