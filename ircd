@@ -23,6 +23,8 @@
 # Gentoo Linux
 # emerge --sync
 # emerge gcc
+# emerge net-libs/gnutls
+
 
 
 
