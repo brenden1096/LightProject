@@ -23,6 +23,7 @@
 # Gentoo Linux
 # emerge --sync
 # emerge gcc
+# emerge sys-devel/gcc - only uncomment if you know what your doing
 
 
 
