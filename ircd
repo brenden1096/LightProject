@@ -49,6 +49,14 @@ tar xvf Unreal*.tar.gz
 cd Unreal3.2 && ./Config -quick && make && make install && cp docs/example.conf unrealircd.conf
 echo "Now go to where Unreal3.2 is and use your favorite text editor to edit unrealircd.conf"
 else
+# elif [ $IRCd = charybdis ]
+# then
+# echo "irc.DarkFission.net #LightProjects"
+# wget ""
+# tar xvf 
+# cd ircd && ./configure && cd etc
+# echo "Now go to where ircd/etc is and use your favorite text editor to edit ircd.conf"
+# else
 echo "Invalid."
 fi
 
